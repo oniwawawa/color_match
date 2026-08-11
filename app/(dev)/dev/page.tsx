@@ -2,6 +2,7 @@
 import { ColorGenerator } from "@/app/components/color_generator";
 import { HSLColorGenerator } from "@/app/components/hsl_color_generator";
 import { CardGenerator } from "@/app/components/card_generator";
+import PageLinkButton from "@/app/components/ui/pege_link_button";
 
 export default function Home() {
   const color1 = ColorGenerator();
@@ -49,6 +50,7 @@ export default function Home() {
         <div className="w-24 h-24" style={{ backgroundColor: hslColor32 }}/>
       </div>
       </div>
+      <PageLinkButton back={true}/>
     </div>
   );
 }
