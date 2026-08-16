@@ -6,6 +6,7 @@ export default function Home() {
     <div className="py-8 flex flex-col gap-y-8 items-center text-black zatsu">
       色のお部屋
       <PageLinkButton href="/kibun">今日の気分はこんな色</PageLinkButton>
+      <PageLinkButton href="/saijaku">しんけいさいじゃく</PageLinkButton>
     </div>
   );
 }
