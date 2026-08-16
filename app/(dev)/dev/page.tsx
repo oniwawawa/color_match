@@ -1,7 +1,7 @@
   "use client"
 import { ColorGenerator } from "@/app/components/color_generator";
-import { HSLColorGenerator } from "@/app/components/hsl_color_generator";
 import { CardGenerator } from "@/app/components/card_generator";
+import { CardGeneratorRandomHue } from "@/app/components/card_generator";
 import PageLinkButton from "@/app/components/ui/pege_link_button";
 
 export default function Home() {
@@ -17,6 +17,13 @@ export default function Home() {
   const hslColor22 = CardGenerator({hue: h, saturation: s,lightnessRandom: true });
   const hslColor31 = CardGenerator({hue: h,  saturationRandom: true,lightness: l});
   const hslColor32 = CardGenerator({hue: h,  saturationRandom: true,lightness: l});
+//３セットの色相ランダムカードを生成（CardGeneratorRandomHue）
+  const randomHues = CardGeneratorRandomHue(s, l, 5);
+  const ranHue1 = randomHues[0];
+  const ranHue2 = randomHues[1];
+  const ranHue3 = randomHues[2];
+  const ranHue4 = randomHues[3];
+  const ranHue5 = randomHues[4];
   return (
     <div className="p-4 flex flex-col gap-y-8">
       <div className="flex flex-col gap-y-2">
@@ -50,6 +57,20 @@ export default function Home() {
         <div className="w-24 h-24" style={{ backgroundColor: hslColor32 }}/>
       </div>
       </div>
+
+      <div className="flex flex-col gap-y-2">
+      CardGeneratorRandomHue（s, l, 5）の結果
+      <div className="flex  gap-x-2">
+        <div className="w-24 h-24" style={{ backgroundColor: ranHue1 }}/>
+        <div className="w-24 h-24" style={{ backgroundColor: ranHue2 }}/>
+        <div className="w-24 h-24" style={{ backgroundColor: ranHue3 }}/>
+        <div className="w-24 h-24" style={{ backgroundColor: ranHue4 }}/>
+        <div className="w-24 h-24" style={{ backgroundColor: ranHue5 }}/>
+      </div>
+      </div>
+
+
+
       <PageLinkButton back={true}/>
     </div>
   );

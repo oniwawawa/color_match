@@ -31,11 +31,18 @@ export function CardGenerator(flags: HSLRandomFlags = {}) : string {
 export function CardGeneratorRandomHue(s: number ,l: number ,count: number) : string[] {
     //型を指定して配列を定義
     const randomHue: string[] = [];
+    let hslColor = HSLColorGenerator({ hue: Math.floor(Math.random() * 360), saturation: s, lightness: l });
+
    
     //指定数だけ色を生成
     for (let i = 0; i < count; i++){
-        const hslColor = HSLColorGenerator({ hue: Math.floor(Math.random() * 360), saturation: s, lightness: l });
-        randomHue.push(hslColor);//hslColor（生成した色）を追加
+        hslColor = HSLColorGenerator({ hue: Math.floor(Math.random() * 360), saturation: s, lightness: l });
+        //同じ色を生成していないか確認（配列に同じ数字が無いか確認）
+        if (!randomHue.includes(hslColor)){
+            randomHue.push(hslColor);//hslColor（生成した色）を追加
+        }else{
+            hslColor = HSLColorGenerator({ hue: Math.floor(Math.random() * 360), saturation: s, lightness: l });
+        }
     }
      
     //配列を返す
