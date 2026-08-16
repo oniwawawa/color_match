@@ -4,7 +4,7 @@ export type HslOptions = {
   saturation?: number
   lightness?: number
 }
-
+// hue:色相　saturation:彩度　lightness:明度
 export function HSLColorGenerator(options: HslOptions): string {
   const {
     hue = Math.floor(Math.random() * 360),

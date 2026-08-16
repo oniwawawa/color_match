@@ -9,7 +9,12 @@ export type HSLRandomFlags = {
     lightness?: number
 }
 
+//関数名: CardGenerator　引数flags（型: HSLRandomFlags）をうけとる
+//引数が何もなければ{}(空)となる
+//最終的にstring:文字列を返す
 export function CardGenerator(flags: HSLRandomFlags = {}) : string {
+
+    //flagsの中の~Randomがtrueならランダムな値を出力、falseなら指定された値(flags.hue)を代入、何もなければ（flags.hue=null→??）0
     const h = flags.hueRandom ? Math.floor(Math.random() * 360) : flags.hue ?? 0;
     const s = flags.saturationRandom ? Math.floor(Math.random() * 101) : flags.saturation ?? 0;
     const l = flags.lightnessRandom ? Math.floor(Math.random() * 101) : flags.lightness ?? 0;
@@ -19,4 +24,20 @@ export function CardGenerator(flags: HSLRandomFlags = {}) : string {
 
 
     return hslColor;
+}
+
+//色相hueだけランダムで生成,指定された数だけ生成して文字列で返す
+//countをnumber(数)型でうけとる
+export function CardGeneratorRandomHue(s: number ,l: number ,count: number) : string[] {
+    //型を指定して配列を定義
+    const randomHue: string[] = [];
+   
+    //指定数だけ色を生成
+    for (let i = 0; i < count; i++){
+        const hslColor = HSLColorGenerator({ hue: Math.floor(Math.random() * 360), saturation: s, lightness: l });
+        randomHue.push(hslColor);//hslColor（生成した色）を追加
+    }
+     
+    //配列を返す
+    return  randomHue;
 }
