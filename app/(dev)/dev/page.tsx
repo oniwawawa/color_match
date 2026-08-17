@@ -1,7 +1,7 @@
 "use client";
-import { ColorGenerator } from "@/app/components/color_generator";
-import { CardGenerator } from "@/app/components/card_generator";
-import { CardGeneratorRandomHue } from "@/app/components/card_generator";
+import { ColorGenerator } from "@/app/utils/color_generator";
+import { CardGenerator } from "@/app/utils/card_generator";
+import { CardGeneratorRandomHue } from "@/app/utils/card_generator";
 import PageLinkButton from "@/app/components/ui/pege_link_button";
 
 export default function Home() {

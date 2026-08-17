@@ -5,6 +5,7 @@ export type HslOptions = {
   lightness?: number
 }
 // hue:色相　saturation:彩度　lightness:明度
+//色相のみを変化させた文字列が入っているリストを作る
 export function HSLColorGenerator(options: HslOptions): string {
   const {
     hue = Math.floor(Math.random() * 360),
