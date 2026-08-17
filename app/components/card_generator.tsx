@@ -26,7 +26,9 @@ export function CardGenerator(flags: HSLRandomFlags = {}) : string {
     return hslColor;
 }
 
+
 //色相hueだけランダムで生成,指定された数だけ生成して文字列で返す
+
 //countをnumber(数)型でうけとる
 export function CardGeneratorRandomHue(s: number ,l: number ,count: number) : string[] {
     //型を指定して配列を定義
